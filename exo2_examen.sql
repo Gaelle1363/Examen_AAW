@@ -10,6 +10,12 @@ directeur_agence varchar(50)
 insert into agence values(1,"lille","5 rue louis","06.06.06.06.06","Mr Henri");
 insert into agence values(2,"roubaix","7 allé pasteur","06.01.01.01.01","Mlle Rich");
 
+CREATE TABLE embauche(
+Id_conseiller int NOT NULL,
+Id_agence int NOT NULL
+) ; 
+insert into embauche values(1,1);
+insert into embauche values(2,1);
 
 CREATE TABLE conseiller(
 Id int NOT NULL,
@@ -22,6 +28,13 @@ nombre_client int
 Insert  into conseiller values (1,"Mop","Tim",45,2,4);
 Insert  into conseiller values (2,"Pot","Léa",45,2,4);
 
+
+CREATE TABLE gestion(
+Id_conseiller int NOT NULL,
+Id_client int NOT NULL
+) ; 
+insert into embauche values(1,1);
+insert into embauche values(1,2);
 
 CREATE TABLE client(
 Id int NOT NULL,
@@ -49,11 +62,14 @@ Insert into compte_client values (2, 123124,"epargne",0,"debit",5000);
 
 CREATE TABLE ligne_compte (
 Id_transaction int NOT NULL,
+Id_client int NOT NULL,
 Montant_transaction int not null,
 Objet_transaction varchar(50),
 Type_transaction varchar(50),
 Autorise boolean
 ) ;
 
-Insert into ligne_compte values (1,50,"zara","payement",true);
-Insert into ligne_compte values (2,150,"virement de loyer","virement",true);
+Insert into ligne_compte values (1,1,50,"zara","payement",true);
+Insert into ligne_compte values (2,1,150,"virement de loyer","virement",true);
+
+
